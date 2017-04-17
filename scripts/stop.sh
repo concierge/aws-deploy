@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-tmux kill-session -t concierge || true
+if tmux kill-session -t concierge ; then
+    echo "tmux session killed"
+else
+    echo "tmux session was not present"
+fi
